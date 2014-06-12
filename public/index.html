@@ -1,0 +1,39 @@
+<html>
+<head>
+	<script type="text/javascript" src="javascripts/vendor/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/underscore/underscore.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/backbone/backbone.js"></script>
+	<script type="text/javascript" src="javascripts/vendor/marionette/lib/backbone.marionette.js"></script>
+	
+	<script type="text/javascript" src="javascripts/backbone/templates/templates.js"></script>
+	<script type="text/javascript" src="javascripts/config/renderer.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/main_app.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/apps/photowall/photowall_app.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/lib/utilities/navigation.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/entities/photos.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/apps/photowall/show/show_controller.js"></script>
+	<script type="text/javascript" src="/javascripts/backbone/apps/photowall/show/show_view.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+<body>
+	<div id="header_region">
+		<input type="radio" id='all' name='all'>
+		<label for="all">All</label>
+		<input type="radio" id='fb' name='fb'>
+		<label for="fb">Facebook</label>
+		<input type="radio" id='ig' name='ig'>
+		<label for="ig">Instagram</label>
+	</div>
+	<div id="main_region"></div>
+	<div id="footer_region"></div>
+	<script type="text/javascript">
+		$(function() {
+			//YOu can pass the data to the global object Pixlee and handle it in main_app.js through the events before:initialize or after:initialize triggered at the app level
+		        Pixlee.start({
+		        		photos: []
+		        		//[{"id":26050928,"photo_title":"\"Hee hee hee, you and your little dog too\" #apple #witch http://t.co/Tnweii9Dak","latitude":null,"longitude":null,"tagged_at":1397211603000,"email_address":null,"instagram_followers":0,"twitter_followers":15,"avatar_url":null,"user_name":"MattTheManMyers","connected_user_id":11281686,"source":"twitter","content_type":"image","data_file_name":"Bk6P5emCIAEn6bE.png","medium_url":"http://pbs.twimg.com/media/Bk6P5emCIAEn6bE.png","big_url":"http://pbs.twimg.com/media/Bk6P5emCIAEn6bE.png","thumbnail_url":"http://pbs.twimg.com/media/Bk6P5emCIAEn6bE.png","source_url":"http://pbs.twimg.com/media/Bk6P5emCIAEn6bE.png","media_id":"454458830244438017","album_photo_id":25895798,"like_count":0,"share_count":0,"facebook_share_count":0,"twitter_share_count":0,"action_link":null,"action_link_text":null,"updated_at":1397211795113,"is_starred":false,"approved":true,"archived":false,"is_flagged":false,"album_id":5114,"unread_count":0,"album_action_link":null,"is_reported":false,"title":null},{"id":26050927,"photo_title":"iPhone5c433#Apple EarPods http://t.co/x9nkDDQSeM","latitude":null,"longitude":null,"tagged_at":1397211656000,"email_address":null,"instagram_followers":0,"twitter_followers":499,"avatar_url":null,"user_name":"AyakaSat0","connected_user_id":11281685,"source":"twitter","content_type":"image","data_file_name":"Bk6QFdGCEAA0yHG.jpg","medium_url":"http://pbs.twimg.com/media/Bk6QFdGCEAA0yHG.jpg","big_url":"http://pbs.twimg.com/media/Bk6QFdGCEAA0yHG.jpg","thumbnail_url":"http://pbs.twimg.com/media/Bk6QFdGCEAA0yHG.jpg","source_url":"http://pbs.twimg.com/media/Bk6QFdGCEAA0yHG.jpg","media_id":"454459053792452608","album_photo_id":25895797,"like_count":0,"share_count":0,"facebook_share_count":0,"twitter_share_count":0,"action_link":null,"action_link_text":null,"updated_at":1397211795036,"is_starred":false,"approved":true,"archived":false,"is_flagged":false,"album_id":5114,"unread_count":0,"album_action_link":null,"is_reported":false,"title":null},{"id":26050867,"photo_title":"RT @94_bits: As se ve (supuestamente) el nuevo sistema operativo de #Apple, el #iOS8 http://t.co/kOmD0tLFlU","latitude":null,"longitude":null,"tagged_at":1397211487000,"email_address":null,"instagram_followers":0,"twitter_followers":107,"avatar_url":null,"user_name":"eldrogis","connected_user_id":11275517,"source":"twitter","content_type":"image","data_file_name":"BjXVRQZCEAAqzdR.png","medium_url":"http://pbs.twimg.com/media/BjXVRQZCEAAqzdR.png","big_url":"http://pbs.twimg.com/media/BjXVRQZCEAAqzdR.png","thumbnail_url":"http://pbs.twimg.com/media/BjXVRQZCEAAqzdR.png","source_url":"http://pbs.twimg.com/media/BjXVRQZCEAAqzdR.png","media_id":"454458345764573184","album_photo_id":25895727,"like_count":0,"share_count":0,"facebook_share_count":0,"twitter_share_count":0,"action_link":null,"action_link_text":null,"updated_at":1397211627008,"is_starred":false,"approved":true,"archived":false,"is_flagged":false,"album_id":5114,"unread_count":0,"album_action_link":null,"is_reported":false,"title":null},{"id":26050864,"photo_title":"RT @nochegeek: Se filtra otra fotografa del iOS 8 con ms apps! RT #iOS8 #apple http://t.co/WhTibGDYuo","latitude":null,"longitude":null,"tagged_at":1397211498000,"email_address":null,"instagram_followers":0,"twitter_followers":107,"avatar_url":null,"user_name":"eldrogis","connected_user_id":11275517,"source":"twitter","content_type":"image","data_file_name":"BjH8vCgCMAAkFjg.jpg","medium_url":"http://pbs.twimg.com/media/BjH8vCgCMAAkFjg.jpg","big_url":"http://pbs.twimg.com/media/BjH8vCgCMAAkFjg.jpg","thumbnail_url":"http://pbs.twimg.com/media/BjH8vCgCMAAkFjg.jpg","source_url":"http://pbs.twimg.com/media/BjH8vCgCMAAkFjg.jpg","media_id":"454458389074939904","album_photo_id":25895725,"like_count":0,"share_count":0,"facebook_share_count":0,"twitter_share_count":0,"action_link":null,"action_link_text":null,"updated_at":1397211626832,"is_starred":false,"approved":true,"archived":false,"is_flagged":false,"album_id":5114,"unread_count":0,"album_action_link":null,"is_reported":false,"title":null},{"id":26050640,"photo_title":"Reasons to ... - http://t.co/vZkr1x3Cma - #Android #App #Apple #Chain #Ios #Iphone #Menu #Software #Tablet http://t.co/53nR0VwpYM","latitude":null,"longitude":null,"tagged_at":1397210471000,"email_address":null,"instagram_followers":0,"twitter_followers":34,"avatar_url":null,"user_name":"rest_apps","connected_user_id":11180814,"source":"twitter","content_type":"image","data_file_name":"Bk6LlR7CAAAkGIP.png","medium_url":"http://pbs.twimg.com/media/Bk6LlR7CAAAkGIP.png","big_url":"http://pbs.twimg.com/media/Bk6LlR7CAAAkGIP.png","thumbnail_url":"http://pbs.twimg.com/media/Bk6LlR7CAAAkGIP.png","source_url":"http://pbs.twimg.com/media/Bk6LlR7CAAAkGIP.png","media_id":"454454085173788672","album_photo_id":25895479,"like_count":0,"share_count":0,"facebook_share_count":0,"twitter_share_count":0,"action_link":null,"action_link_text":null,"updated_at":1397210676324,"is_starred":false,"approved":true,"archived":false,"is_flagged":false,"album_id":5114,"unread_count":0,"album_action_link":null,"is_reported":false,"title":null}]
+		        });
+		});
+	</script>
+</body>
+</html>
